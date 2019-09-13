@@ -1,5 +1,257 @@
 /* Extra small devices (phones, 600px max) */
 @media screen and (max-width: 600px) {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    flex-wrap: wrap;
+    z-index: 9999;
+  }
+
+  .line {
+    height: 2px;
+    background: white;
+    width: 21px;
+    margin-top: 4px;
+  }
+  nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .hamburger {
+    border-radius: 100px;
+    width: 46px;
+    background: #5f6cd9b3;
+    padding: 0.8em;
+    height: 46px;
+    position: fixed;
+    cursor: pointer;
+    right: 3.5%;
+    top: 7%;
+    z-index: 2;
+  }
+
+  .hamburger:hover {
+    background: #5f6cd9;
+  }
+
+  .toggle span {
+    width: 22px;
+    height: 2.5px;
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, 9px);
+    transition: 0.5s;
+    right: 2%;
+  }
+
+  .toggle span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(3px);
+    transition: 0.5s;
+  }
+  .toggle span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(18px);
+    transition: 0.5s;
+  }
+
+  .toggle.active span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-10px);
+    opacity: 0;
+  }
+  .toggle.active span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(28px);
+    opacity: 0;
+  }
+
+  .toggle.active span:nth-child(2) {
+    transform: translate(-50%, 10px) rotate(45deg);
+  }
+  .toggle.active span:nth-child(3) {
+    transform: translate(-50%, 10px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(11% at 88% 2%);
+    -webkit-clip-path: circle(7% at 89% 10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    background: #fffffff0;
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav-links li {
+    opacity: 0;
+    padding: 1em;
+  }
+  .nav-links li a {
+    font-size: 22px;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+
+  .layer {
+    background-image: url(/projects/axelfpi.com.ar/images/FondoPrincipal.jpg);
+    height: 582px;
+    width: 100%;
+  }
+
+  .layer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+  }
+
+  .layer-container img {
+    width: 85%;
+  }
+
+  .scroll {
+    text-indent: -2000em;
+    border-radius: 100px;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: 85%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    text-align: center;
+  }
+
+  @-webkit-keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+
+  @keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+
+  .scroll span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    -webkit-animation: bounce 3s 2s infinite;
+    animation: bounce 2s 1s infinite;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-image: url(/projects/axelfpi.com.ar/images/scroll.png);
+  }
 }
 
 /* Small devices (landscape tablets, 600px and up) */
