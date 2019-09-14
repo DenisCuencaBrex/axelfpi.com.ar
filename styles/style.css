@@ -51,8 +51,11 @@
   }
 
   .nav-links li a {
-    color: white;
+    color: #5f6cd9;
     text-decoration: none;
+    font: 30px/60px "ProximaNovaExCn-Semibold", Arial;
+    font-style: normal;
+    font-weight: 600;
     font-size: 16px;
   }
 
@@ -126,7 +129,6 @@
   }
   .nav-links li {
     opacity: 0;
-    padding: 1em;
   }
   .nav-links li a {
     font-size: 22px;
@@ -251,6 +253,26 @@
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     background-image: url(/projects/axelfpi.com.ar/images/scroll.png);
+  }
+
+  .profile-section {
+    text-align: center;
+  }
+
+  .profile-img {
+    padding: 3em 0 0;
+  }
+
+  .profile-img img {
+    width: 85%;
+  }
+
+  .profile-text {
+    font: 12px/130% "HelveticaNeue_Light", Arial;
+    color: #333;
+    margin: 0 auto;
+    padding: 25px 20px 80px;
+    line-height: 1;
   }
 }
 
